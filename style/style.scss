@@ -1,0 +1,184 @@
+@import "variables";
+@import "mixins";
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  list-style: none;
+}
+body {
+  section {
+    width: 100%;
+    padding: 100px;
+    min-height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    background: #fff;
+    .circle {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background: #017143;
+      clip-path: circle(600px at right 800px);
+      @include mobile {
+        width: 373px;
+      }
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: absolute;
+      padding: 20px 80px;
+      width: 100%;
+      left: 0;
+      top: 0;
+      @include mobile {
+        margin-top: 15px;
+        margin-left: 10px;
+        padding: 0;
+      }
+      .logo {
+        position: relative;
+        max-width: 80px;
+        img {
+          height: 85px;
+        }
+      }
+      ul {
+        display: flex;
+        @include mobile {
+          flex-wrap: wrap;
+        }
+        a {
+          display: inline-block;
+          text-decoration: none;
+          font-weight: 400;
+          color: #333;
+          margin-left: 35px;
+        }
+      }
+    }
+    main {
+      .middle {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        @include mobile {
+          width: 245px;
+          margin-left: -2em;
+          flex-wrap: wrap;
+        }
+        .textBox {
+          position: relative;
+          max-width: 600px;
+          color: #333;
+          @include mobile {
+            margin-top: 2em;
+          }
+          h2 {
+            font-weight: 500;
+            font-size: 3em;
+            line-height: 1.4em;
+            @include mobile {
+              font-size: inherit;
+            }
+            span {
+              font-weight: 900;
+              font-size: 1.2em;
+            }
+          }
+          a {
+            display: inline-block;
+            text-decoration: none;
+            margin-top: 20px;
+            padding: 8px 20px;
+            background: #017143;
+            color: #fff;
+            font-weight: 500;
+            border-radius: 30px;
+            letter-spacing: 1px;
+            @include mobile {
+              padding: inherit;
+              background: none;
+            }
+          }
+        }
+        .imgBox {
+          width: 600px;
+          margin-top: 50px;
+          display: flex;
+          justify-content: flex-end;
+          padding-right: 40px;
+          @include mobile {
+            justify-content: start;
+          }
+          .starbucks {
+            max-width: 320px;
+            @include mobile {
+              max-width: 190px;
+              margin: 4em 2em;
+            }
+          }
+        }
+      }
+      .image {
+        position: absolute;
+        left: 50%;
+        bottom: 20px;
+        display: flex;
+        transform: translateX(-50%);
+        li {
+          display: inline-block;
+          margin: 0 20px;
+          cursor: pointer;
+          &:hover {
+            transform: translateY(-15px);
+          }
+          img {
+            max-width: 60px;
+          }
+        }
+      }
+      .social {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        top: 50%;
+        right: 30px;
+        transform: translateY(-50%);
+        @include mobile {
+          right: 9em;
+          flex-direction: row;
+        }
+        li {
+          @include mobile {
+            margin-right: 10px;
+          }
+          a {
+            display: inline-block;
+            margin: 5px 0;
+            transform: scale(o.6);
+            filter: invert(1);
+            img {
+              height: 30px;
+              @include mobile {
+                height: 20px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
